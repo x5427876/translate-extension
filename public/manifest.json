@@ -1,0 +1,63 @@
+{
+    "manifest_version": 3,
+    "name": "91Translate Tool",
+    "description": "快速查看＆修改 Language tool key 小工具",
+    "version": "1.0.0",
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "action": {
+        "default_title": "點擊開啟小工具",
+        "default_popup": "./popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "./contentscript.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "<all_urls>",
+        "*://*/*",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "commands": {
+        "switch-select-mode": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+S",
+                "mac": "MacCtrl+Shift+S"
+            },
+            "description": "打開/關閉選取功能"
+        },
+        "open-translate-window": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+A",
+                "mac": "MacCtrl+Shift+A"
+            },
+            "description": "在新視窗打開翻譯頁"
+        }
+    },
+    "devtools_page": "devtools.html",
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "dist/domain.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

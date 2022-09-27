@@ -5194,60 +5194,6 @@ const backdropClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('M
 
 /***/ }),
 
-/***/ "./node_modules/@mui/material/Box/Box.js":
-/*!***********************************************!*\
-  !*** ./node_modules/@mui/material/Box/Box.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/createBox.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _className__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../className */ "./node_modules/@mui/utils/esm/ClassNameGenerator/ClassNameGenerator.js");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles */ "./node_modules/@mui/material/styles/createTheme.js");
-
-
-
-
-const defaultTheme = (0,_styles__WEBPACK_IMPORTED_MODULE_0__["default"])();
-const Box = (0,_mui_system__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  defaultTheme,
-  defaultClassName: 'MuiBox-root',
-  generateClassName: _className__WEBPACK_IMPORTED_MODULE_2__["default"].generate
-});
- true ? Box.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * @ignore
-   */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().node),
-
-  /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */
-  component: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().elementType),
-
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_3___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object)])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Box);
-
-/***/ }),
-
 /***/ "./node_modules/@mui/material/Button/Button.js":
 /*!*****************************************************!*\
   !*** ./node_modules/@mui/material/Button/Button.js ***!
@@ -18986,66 +18932,6 @@ function compose(...styles) {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (compose);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/system/esm/createBox.js":
-/*!***************************************************!*\
-  !*** ./node_modules/@mui/system/esm/createBox.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ createBox)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _mui_styled_engine__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/styled-engine */ "./node_modules/@mui/styled-engine/index.js");
-/* harmony import */ var _styleFunctionSx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styleFunctionSx */ "./node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js");
-/* harmony import */ var _styleFunctionSx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styleFunctionSx */ "./node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js");
-/* harmony import */ var _useTheme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./useTheme */ "./node_modules/@mui/system/esm/useTheme.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["className", "component"];
-
-
-
-
-
-
-function createBox(options = {}) {
-  const {
-    defaultTheme,
-    defaultClassName = 'MuiBox-root',
-    generateClassName,
-    styleFunctionSx = _styleFunctionSx__WEBPACK_IMPORTED_MODULE_5__["default"]
-  } = options;
-  const BoxRoot = (0,_mui_styled_engine__WEBPACK_IMPORTED_MODULE_6__["default"])('div')(styleFunctionSx);
-  const Box = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function Box(inProps, ref) {
-    const theme = (0,_useTheme__WEBPACK_IMPORTED_MODULE_7__["default"])(defaultTheme);
-
-    const _extendSxProp = (0,_styleFunctionSx__WEBPACK_IMPORTED_MODULE_8__["default"])(inProps),
-          {
-      className,
-      component = 'div'
-    } = _extendSxProp,
-          other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_extendSxProp, _excluded);
-
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(BoxRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      as: component,
-      ref: ref,
-      className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(className, generateClassName ? generateClassName(defaultClassName) : defaultClassName),
-      theme: theme
-    }, other));
-  });
-  return Box;
-}
 
 /***/ }),
 
@@ -59331,57 +59217,16 @@ function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;
 
 /***/ }),
 
-/***/ "./src/popup-page/langDropSelect.tsx":
-/*!*******************************************!*\
-  !*** ./src/popup-page/langDropSelect.tsx ***!
-  \*******************************************/
+/***/ "./src/popup-page/Options.tsx":
+/*!************************************!*\
+  !*** ./src/popup-page/Options.tsx ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "BasicSelect": () => (/* binding */ BasicSelect)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
-/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
-/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/FormControl.js");
-/* harmony import */ var _mui_material_Select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Select */ "./node_modules/@mui/material/Select/Select.js");
-
-
-
-
-
-
-function BasicSelect() {
-    const [age, setAge] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], { sx: { height: 35, width: 150 } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_2__["default"], { fullWidth: true, sx: { height: 35, width: 150, fontSize: 16 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_3__["default"], { id: "demo-simple-select-label" }, "Age"),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_4__["default"], { labelId: "demo-simple-select-label", id: "demo-simple-select", value: age, label: "Age", onChange: handleChange },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], { value: 10 }, "Ten"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], { value: 20 }, "Twenty"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], { value: 30 }, "Thirty")))));
-}
-
-
-/***/ }),
-
-/***/ "./src/popup-page/toolsCard.tsx":
-/*!**************************************!*\
-  !*** ./src/popup-page/toolsCard.tsx ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ToolsCard": () => (/* binding */ ToolsCard)
+/* harmony export */   "Options": () => (/* binding */ Options)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -59406,14 +59251,14 @@ const EditModeContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["defaul
     justify-content: end;
     align-items: center;
 `;
-const ToolsCard = (props) => {
+const Options = (props) => {
     const selectData = _staticData__WEBPACK_IMPORTED_MODULE_1__.LANGUAGE_SELECT_DATA;
     const [selectedLang, setSelectedLang] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ name: "中文", value: 'zh-TW' });
     const handleSelectChange = (e) => {
         setSelectedLang({ name: e.target.name, value: e.target.value });
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ToolsContainer, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_langDropSelect__WEBPACK_IMPORTED_MODULE_2__.BasicSelect, null),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_langDropSelect__WEBPACK_IMPORTED_MODULE_2__["default"], null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(EditModeContainer, null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], null),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { component: "span", variant: "subtitle2" }, "\u7DE8\u8F2F\u6A21\u5F0F"))));
@@ -59422,9 +59267,9 @@ const ToolsCard = (props) => {
 
 /***/ }),
 
-/***/ "./src/popup-page/userCard.tsx":
+/***/ "./src/popup-page/UserCard.tsx":
 /*!*************************************!*\
-  !*** ./src/popup-page/userCard.tsx ***!
+  !*** ./src/popup-page/UserCard.tsx ***!
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -59480,6 +59325,73 @@ const UserCard = (props) => {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { component: "div", variant: "h6" }, userInfo.displayName),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { variant: "subtitle1", color: "text.secondary", component: "div" }, userInfo.email))))));
 };
+
+
+/***/ }),
+
+/***/ "./src/popup-page/langDropSelect.tsx":
+/*!*******************************************!*\
+  !*** ./src/popup-page/langDropSelect.tsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SelectSmall)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
+/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
+/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/FormControl.js");
+/* harmony import */ var _mui_material_Select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Select */ "./node_modules/@mui/material/Select/Select.js");
+
+
+
+
+
+function SelectSmall() {
+    const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('zh-TW');
+    const handleChange = (event) => {
+        setLang(event.target.value);
+        chrome.declarativeNetRequest.updateDynamicRules({
+            addRules: [{
+                    'id': 1,
+                    'priority': 1,
+                    'action': {
+                        'type': 'modifyHeaders',
+                        'requestHeaders': [
+                            {
+                                header: 'accept-language',
+                                operation: 'set',
+                                value: event.target.value
+                            }
+                        ]
+                    },
+                    'condition': {
+                        'urlFilter': 'https://sms.qa.91dev.tw',
+                        'resourceTypes': [
+                            // @ts-ignore
+                            'csp_report', 'font', 'image', 'main_frame', 'media', 'object', 'other', 'ping', 'script', 'stylesheet', 'sub_frame', 'webbundle', 'websocket', 'webtransport', 'xmlhttprequest'
+                        ]
+                    }
+                }
+            ],
+            removeRuleIds: [1, 2, 1001, 101]
+        });
+        chrome.declarativeNetRequest.getDynamicRules((res) => console.log(res));
+        chrome.tabs.reload();
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_1__["default"], { sx: { m: 1, minWidth: 120 }, size: "small" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_2__["default"], { id: "lang-select" }, "\u8A9E\u8A00"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_3__["default"], { labelId: "lang-select", id: "lang-select", value: lang, label: "lang", onChange: handleChange },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], { value: 'zh-TW' }, "\u4E2D\u6587"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], { value: 'zh-HK' }, "\u9999\u6E2F\u4E2D\u6587"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], { value: 'en-US' }, "\u82F1\u6587"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], { value: 'ms-MY' }, "\u99AC\u4F86\u6587"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], { value: 'kok-IN' }, "\u706B\u661F\u6587"))));
+}
 
 
 /***/ }),
@@ -60758,8 +60670,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _userCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userCard */ "./src/popup-page/userCard.tsx");
-/* harmony import */ var _toolsCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./toolsCard */ "./src/popup-page/toolsCard.tsx");
+/* harmony import */ var _Options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Options */ "./src/popup-page/Options.tsx");
+/* harmony import */ var _UserCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UserCard */ "./src/popup-page/UserCard.tsx");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
 /* harmony import */ var _staticData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../staticData */ "./src/staticData.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -60793,7 +60705,6 @@ const Popup = () => {
     // 監聽 Chrome State 變更時修改 React State
     // 寫在這因為 useState 無法在非 Function Component 內使用 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-        console.log(request.action);
         if (request.action === "setReactUserInfo") {
             chrome.storage.sync.get(["displayName", "email", "photoUrl"], (result) => {
                 const { displayName, email, photoUrl } = result;
@@ -60822,8 +60733,8 @@ const Popup = () => {
         }));
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Container, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_userCard__WEBPACK_IMPORTED_MODULE_2__.UserCard, { isLogin: isLogin, userInfo: userInfo }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_toolsCard__WEBPACK_IMPORTED_MODULE_3__.ToolsCard, null),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_UserCard__WEBPACK_IMPORTED_MODULE_3__.UserCard, { isLogin: isLogin, userInfo: userInfo }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Options__WEBPACK_IMPORTED_MODULE_2__.Options, null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { severity: isValidDomain ? 'success' : 'error' }, isValidDomain ? `當前頁面可使用小工具` : `當前頁面不支援小工具`)));
 };
 const container = document.getElementById("popup");

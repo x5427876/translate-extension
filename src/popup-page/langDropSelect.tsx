@@ -1,33 +1,64 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React, { useState, useEffect } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export function BasicSelect() {
-    const [age, setAge] = React.useState('');
+export default function LangSelect() {
+    const [lang, setLang] = useState('zh-TW');
 
     const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
-    };
+        setLang(event.target.value);
+
+        // 透過更改 request header 中的 accept-language 切換頁面語系
+        chrome.declarativeNetRequest.updateDynamicRules(
+            {
+                addRules: [{
+                    'id': 1,
+                    'priority': 1,
+                    'action': {
+                        'type': 'modifyHeaders' as chrome.declarativeNetRequest.RuleActionType,
+                        'requestHeaders': [
+                            {
+                                header: 'accept-language',
+                                operation: 'set' as chrome.declarativeNetRequest.HeaderOperation,
+                                value: event.target.value
+                            }
+                        ]
+                    },
+
+                    'condition': {
+                        'urlFilter': 'https://sms.qa.91dev.tw',
+                        'resourceTypes': [
+                            // @ts-ignore
+                            'csp_report', 'font', 'image', 'main_frame', 'media', 'object', 'other', 'ping', 'script', 'stylesheet', 'sub_frame', 'webbundle', 'websocket', 'webtransport', 'xmlhttprequest'
+                        ]
+                    }
+                }
+                ],
+                removeRuleIds: [1]
+            }
+        )
+
+        chrome.tabs.reload();
+    }
 
     return (
-        <Box sx={{ height: 35, width: 150 }}>
-            <FormControl fullWidth sx={{ height: 35, width: 150, fontSize: 16 }}>
-                <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Age"
-                    onChange={handleChange}
-                >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-            </FormControl>
-        </Box >
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="lang-select">語言</InputLabel>
+            <Select
+                labelId="lang-select"
+                id="lang-select"
+                value={lang}
+                label="lang"
+                onChange={handleChange}
+            >
+                <MenuItem value={'zh-TW'}>中文</MenuItem>
+                <MenuItem value={'zh-HK'}>香港中文</MenuItem>
+                <MenuItem value={'en-US'}>英文</MenuItem>
+                <MenuItem value={'ms-MY'}>馬來文</MenuItem>
+                <MenuItem value={'kok-IN'}>火星文</MenuItem>
+            </Select>
+        </FormControl>
     );
 }

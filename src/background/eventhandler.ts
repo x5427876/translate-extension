@@ -3,10 +3,12 @@ import { LANGUAGE_TOOL_URL } from '../staticData'
 
 interface IRequest {
     action: string;
+    data?: any;
 }
 
 let tabToClose: number = 0;
 let idToken: string;
+let pageLang = 'zh-TW';
 
 const setChromeListener = () => {
     // 點擊登入按鈕
@@ -25,7 +27,7 @@ const setChromeListener = () => {
 
     // 攔截 LT 發送的 POST 請求，並提取其中的 idToken
     chrome.webRequest.onBeforeRequest.addListener(
-        function (details) {
+        function (details: chrome.webRequest.WebRequestBodyDetails) {
             if (
                 details.method == 'POST'
                 && details.initiator == LANGUAGE_TOOL_URL

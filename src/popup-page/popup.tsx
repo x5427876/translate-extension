@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
 import { createRoot } from 'react-dom/client';
 import styled from 'styled-components';
-import { UserCard } from './userCard';
-import { ToolsCard } from './toolsCard';
+import { Options } from './Options';
+import { UserCard } from "./UserCard";
 import { Alert } from '@mui/material';
 import { VALID_DOMAIN_LIST } from '../staticData'
 
@@ -33,7 +33,6 @@ export const Popup: FC = () => {
     // 監聽 Chrome State 變更時修改 React State
     // 寫在這因為 useState 無法在非 Function Component 內使用 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-        console.log(request.action)
         if (request.action === "setReactUserInfo") {
             chrome.storage.sync.get(["displayName", "email", "photoUrl"], (result) => {
                 const { displayName, email, photoUrl } = result;
@@ -72,7 +71,7 @@ export const Popup: FC = () => {
                 isLogin={isLogin}
                 userInfo={userInfo}
             />
-            <ToolsCard />
+            <Options />
             <Alert severity={isValidDomain ? 'success' : 'error'}>
                 {isValidDomain ? `當前頁面可使用小工具` : `當前頁面不支援小工具`}
             </Alert>

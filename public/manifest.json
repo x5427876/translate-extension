@@ -5,7 +5,8 @@
     "version": "1.0.0",
     "host_permissions": [
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "<all_urls>"
     ],
     "action": {
         "default_title": "點擊開啟小工具",
@@ -31,7 +32,9 @@
         "<all_urls>",
         "*://*/*",
         "webRequest",
-        "webRequestBlocking"
+        "webRequestBlocking",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback"
     ],
     "commands": {
         "switch-select-mode": {

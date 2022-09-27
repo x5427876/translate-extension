@@ -71,6 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let tabToClose = 0;
 let idToken;
+let pageLang = 'zh-TW';
 const setChromeListener = () => {
     // 點擊登入按鈕
     chrome.runtime.onMessage.addListener((request) => {

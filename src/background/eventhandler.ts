@@ -8,7 +8,6 @@ interface IRequest {
 
 let tabToClose: number = 0;
 let idToken: string;
-let pageLang = 'zh-TW';
 
 const setChromeListener = () => {
     // 點擊登入按鈕

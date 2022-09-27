@@ -10,6 +10,10 @@ export default function LangSelect() {
     const handleChange = (event: SelectChangeEvent) => {
         setLang(event.target.value);
 
+        chrome.storage.sync.set({
+            pageLang: event.target.value
+        });
+
         // 透過更改 request header 中的 accept-language 切換頁面語系
         chrome.declarativeNetRequest.updateDynamicRules(
             {
@@ -42,6 +46,15 @@ export default function LangSelect() {
 
         chrome.tabs.reload();
     }
+
+    useEffect(() => {
+        chrome.storage.sync.get(["pageLang"], (result) => {
+            const { pageLang } = result
+            if (pageLang) {
+                setLang(pageLang)
+            }
+        })
+    },[])
 
     return (
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">

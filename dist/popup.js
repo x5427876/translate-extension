@@ -59217,10 +59217,10 @@ function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;
 
 /***/ }),
 
-/***/ "./src/popup-page/Options.tsx":
-/*!************************************!*\
-  !*** ./src/popup-page/Options.tsx ***!
-  \************************************/
+/***/ "./src/popup-page/components/Options.tsx":
+/*!***********************************************!*\
+  !*** ./src/popup-page/components/Options.tsx ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -59230,47 +59230,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Switch/Switch.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _staticData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../staticData */ "./src/staticData.ts");
-/* harmony import */ var _langDropSelect__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./langDropSelect */ "./src/popup-page/langDropSelect.tsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Switch/Switch.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _langDropSelect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./langDropSelect */ "./src/popup-page/components/langDropSelect.tsx");
 
 
 
 
-
-const ToolsContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div `
+const ToolsContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div `
     height: 30%;
     margin: 10px;
     display: flex;
     justify-content: space-between;
 `;
-const EditModeContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div `
+const EditModeContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div `
     display: flex;
     justify-content: end;
     align-items: center;
 `;
 const Options = (props) => {
-    const selectData = _staticData__WEBPACK_IMPORTED_MODULE_1__.LANGUAGE_SELECT_DATA;
-    const [selectedLang, setSelectedLang] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ name: "中文", value: 'zh-TW' });
-    const handleSelectChange = (e) => {
-        setSelectedLang({ name: e.target.name, value: e.target.value });
-    };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ToolsContainer, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_langDropSelect__WEBPACK_IMPORTED_MODULE_2__["default"], null),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_langDropSelect__WEBPACK_IMPORTED_MODULE_1__["default"], null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(EditModeContainer, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], null),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { component: "span", variant: "subtitle2" }, "\u7DE8\u8F2F\u6A21\u5F0F"))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_3__["default"], null),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], { component: "span", variant: "subtitle2" }, "\u7DE8\u8F2F\u6A21\u5F0F"))));
 };
 
 
 /***/ }),
 
-/***/ "./src/popup-page/UserCard.tsx":
-/*!*************************************!*\
-  !*** ./src/popup-page/UserCard.tsx ***!
-  \*************************************/
+/***/ "./src/popup-page/components/UserCard.tsx":
+/*!************************************************!*\
+  !*** ./src/popup-page/components/UserCard.tsx ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -59329,16 +59322,16 @@ const UserCard = (props) => {
 
 /***/ }),
 
-/***/ "./src/popup-page/langDropSelect.tsx":
-/*!*******************************************!*\
-  !*** ./src/popup-page/langDropSelect.tsx ***!
-  \*******************************************/
+/***/ "./src/popup-page/components/langDropSelect.tsx":
+/*!******************************************************!*\
+  !*** ./src/popup-page/components/langDropSelect.tsx ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ SelectSmall)
+/* harmony export */   "default": () => (/* binding */ LangSelect)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -59351,10 +59344,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function SelectSmall() {
+function LangSelect() {
     const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('zh-TW');
     const handleChange = (event) => {
         setLang(event.target.value);
+        chrome.storage.sync.set({
+            pageLang: event.target.value
+        });
+        // 透過更改 request header 中的 accept-language 切換頁面語系
         chrome.declarativeNetRequest.updateDynamicRules({
             addRules: [{
                     'id': 1,
@@ -59378,11 +59375,18 @@ function SelectSmall() {
                     }
                 }
             ],
-            removeRuleIds: [1, 2, 1001, 101]
+            removeRuleIds: [1]
         });
-        chrome.declarativeNetRequest.getDynamicRules((res) => console.log(res));
         chrome.tabs.reload();
     };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        chrome.storage.sync.get(["pageLang"], (result) => {
+            const { pageLang } = result;
+            if (pageLang) {
+                setLang(pageLang);
+            }
+        });
+    }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_1__["default"], { sx: { m: 1, minWidth: 120 }, size: "small" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_2__["default"], { id: "lang-select" }, "\u8A9E\u8A00"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_3__["default"], { labelId: "lang-select", id: "lang-select", value: lang, label: "lang", onChange: handleChange },
@@ -60670,8 +60674,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Options */ "./src/popup-page/Options.tsx");
-/* harmony import */ var _UserCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UserCard */ "./src/popup-page/UserCard.tsx");
+/* harmony import */ var _components_Options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Options */ "./src/popup-page/components/Options.tsx");
+/* harmony import */ var _components_UserCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/UserCard */ "./src/popup-page/components/UserCard.tsx");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
 /* harmony import */ var _staticData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../staticData */ "./src/staticData.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -60733,8 +60737,8 @@ const Popup = () => {
         }));
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Container, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_UserCard__WEBPACK_IMPORTED_MODULE_3__.UserCard, { isLogin: isLogin, userInfo: userInfo }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Options__WEBPACK_IMPORTED_MODULE_2__.Options, null),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_UserCard__WEBPACK_IMPORTED_MODULE_3__.UserCard, { isLogin: isLogin, userInfo: userInfo }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Options__WEBPACK_IMPORTED_MODULE_2__.Options, null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { severity: isValidDomain ? 'success' : 'error' }, isValidDomain ? `當前頁面可使用小工具` : `當前頁面不支援小工具`)));
 };
 const container = document.getElementById("popup");

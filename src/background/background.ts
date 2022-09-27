@@ -1,5 +1,4 @@
 import { setChromeListener } from './eventhandler'
-import { useState } from 'react';
 import { LANGUAGE_TOOL_API_KEY } from '../staticData'
 
 // 開始執行所有事件監聽

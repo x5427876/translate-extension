@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
 import { createRoot } from 'react-dom/client';
 import styled from 'styled-components';
-import { Options } from './Options';
-import { UserCard } from "./UserCard";
+import { Options } from './components/Options';
+import { UserCard } from "./components/UserCard";
 import { Alert } from '@mui/material';
 import { VALID_DOMAIN_LIST } from '../staticData'
 

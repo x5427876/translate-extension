@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react'
 import styled, { AnyStyledComponent } from 'styled-components';
-import { Typography, Switch, FormControl, InputLabel, Select, MenuItem, SelectChangeEvent, OutlinedInput } from '@mui/material'
-import { LANGUAGE_SELECT_DATA } from '../staticData'
+import { Typography, Switch } from '@mui/material'
 import LangSelect from './langDropSelect'
 
 interface IKeyValuePair {
